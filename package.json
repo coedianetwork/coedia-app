@@ -1,0 +1,47 @@
+{
+  "name": "coedia-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Buidlers",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@material-tailwind/react": "^1.2.4",
+    "daisyui": "^2.31.0",
+    "ethers": "^5.7.1",
+    "flowbite": "^1.5.3",
+    "flowbite-react": "^0.1.11",
+    "graphql": "^16.6.0",
+    "ipfs-http-client": "^58.0.1",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "suneditor": "^2.44.2",
+    "suneditor-react": "^2.16.5",
+    "urql": "^3.0.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.17",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.8"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "html.format.wrapAttributes": "auto",
+    "printWidth": 80
+  }
+}

@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-navbar {
+    background-color: #00FFD1;
+}
+
+.button-navbar:hover {
+    background-color: #12DAB6;
+}
+
+.button-main-color {
+    background-color: #12DAB6;
+}
+
+.button-main-color:hover {
+    background-color: #12DAB6;
+}
+
+.Container {
+   /*  margin-top: 70px; */
+    /* display: flex; */
+    justify-content: center;
+  min-height: 70vh; 
+
+   /*  max-width: 1250px; */
+}
+
+.Home_Search_Container {
+  /*   max-width: 1250px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home_Search_Search {
+    
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_form_search_home {
+    width: 400px;
+}
+
+.footer_global  {
+    display: flex;
+    justify-content: center;
+}
