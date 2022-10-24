@@ -1,8 +1,8 @@
 import Editor from '../components/Editor'
 import { useContext, useRef, useState, useEffect } from 'react'
-import { AppContext } from '../context'
+// import { AppContext } from '../context'
 import Image from 'next/image'
-import logo from '../public/logos/logo_coedia_light.png'
+import logo from '../public/img/logo.svg'
 
 import {
   createClient,
@@ -21,14 +21,6 @@ import { create } from 'ipfs-http-client'
 import { v4 as uuid } from 'uuid'
 const projectId = ''
 const projectSecret = ''
-const authorization = 'Basic ' + window.btoa(projectId + ':' + projectSecret)
-
-const client = create({
-  url: 'https://ipfs.infura.io:5001/api/v0',
-  headers: {
-    authorization
-  }
-})
 
 const freeCollectModule = '0x23b9467334bEb345aAa6fd1545538F3d54436e96'
 
@@ -44,7 +36,6 @@ export default function Question() {
   useEffect(() => {
     refreshAuthToken()
     async function checkConnection() {
-      console.log('aca1')
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const addresses = await provider.listAccounts()
       if (addresses.length) {
@@ -63,19 +54,13 @@ export default function Question() {
 
   async function getUserProfile(address) {
     try {
-      console.log('aca3 address, ', address)
-
       const urqlClient = await createClient()
-      console.log('aca5 ', urqlClient)
-
       const response = await urqlClient
         .query(getDefaultProfile, {
           address
         })
         .toPromise()
-
       setUserProfile(response.data.defaultProfile)
-      console.log('pro id:', response.data.defaultProfile)
     } catch (err) {
       console.log('Error: ', err)
     }
@@ -128,6 +113,14 @@ export default function Question() {
       createdOn: new Date().toISOString(),
       ...baseMetadata
     }
+
+    const client = create({
+      url: 'https://ipfs.infura.io:5001/api/v0',
+      headers: {
+        authorization: 'Basic ' + window.btoa(projectId + ':' + projectSecret)
+      }
+    })
+
     const added = await client.add(JSON.stringify(metaData))
     const uri = `https://ipfs.infura.io/ipfs/${added.path}`
     return uri

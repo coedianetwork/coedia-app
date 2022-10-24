@@ -1,8 +1,8 @@
 {
-  "name": "coedia-mvp",
+  "name": "coedia-alpha",
   "version": "0.1.0",
   "private": true,
-  "author": "Buidlers",
+  "author": "Buidlers.tech",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

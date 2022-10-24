@@ -36,7 +36,7 @@ export async function createClient() {
       })
       return urqlClient
     } catch (err) {
-      console.log('XXX ', err)
+      console.log('Err: ', err)
       return basicClient
     }
   } else {
